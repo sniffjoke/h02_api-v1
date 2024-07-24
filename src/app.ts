@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import {SETTINGS} from "./settings";
+import {getController} from "./blogs/controllers/getController";
+import {authMiddleware} from "../middlewares/authMiddleware";
 // import videoRoutes from "./routes/videoRoutes";
 // import testingRoutes from "./routes/testingRoutes";
 
@@ -13,6 +15,6 @@ app.get('/', (req, res) => {
     res.status(200).json({version: '2.0'})
 })
 
-// app.get(SETTINGS.PATH.VIDEOS, getVideoController)
+app.get(SETTINGS.PATH.BLOGS, authMiddleware, getController)
 // app.use(SETTINGS.PATH.VIDEOS, videoRoutes)
 // app.use(SETTINGS.PATH.TESTING, testingRoutes)
