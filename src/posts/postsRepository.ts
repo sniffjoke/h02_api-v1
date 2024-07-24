@@ -1,45 +1,46 @@
 import {db} from "../../db/db";
+import {blogsRepository} from "../blogs/blogsRepository";
 
 
-export const blogsRepository = {
+export const postsRepository = {
     getAll() {
-        return db.blogs.map(p => p)
+        return db.posts.map(p => p)
     },
     getOne(id: string) {
-        return db.blogs.map(p => p.id === id)
+        return db.posts.map(p => p.id === id)
     },
     findById(id: string) {
-        return db.blogs.find(p => p.id === id)
+        return db.posts.find(p => p.id === id)
     },
-    createBlog(blog: any) {
+    createPost(post: any) {
         return {
             id: (new Date().getTime().toString(36)),
-            name: blog.name,
-            description: blog.description,
-            websiteUrl: blog.websiteUrl
+            title: post.title,
+            content: post.content,
+            shortDescription: post.shortDescription,
+            blogId: post.blogId,
+            blogName: blogsRepository.findById(post.blogId)!.name,
         }
     },
-    updateBlog(blog: any, id: string) {
-
-        // const updatedBlog = {
-        //     id,
-        //     name: blog.name,
-        //     description: blog.description,
-        //     websiteUrl: blog.websiteUrl
-        // }
-        return db.blogs = db.blogs.map(p => p.id === id
+    updatePost(post: any, id: string) {
+        const blog: any = blogsRepository.findById(post.blogId)
+        console.log(post)
+        return db.posts = db.posts.map(p => p.id === id
             ?
             {
                 ...p,
-                id,
-                name: blog.name,
-                description: blog.description,
-                websiteUrl: blog.websiteUrl
+                ...post,
+                id: post.id,
+                title: post.title,
+                content: post.content,
+                shortDescription: post.shortDescription,
+                blogId: post.blogId,
+                blogName: blog.name,
             }
             :
             p)
     },
-    deleteBlog(id: string) {
-        return db.blogs = db.blogs.filter(blog => blog.id !== id)
+    deletePost(id: string) {
+        return db.posts = db.posts.filter(post => post.id !== id)
     }
 }

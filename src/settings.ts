@@ -8,6 +8,7 @@ export const SETTINGS = {
         // VIDEOS: '/api/videos',
         TESTING: '/api/testing/all-data',
         BLOGS: '/api/blogs',
+        POSTS: '/api/posts',
         ADMIN: process.env.ADMIN || 'admin:qwerty',
     }
 }
