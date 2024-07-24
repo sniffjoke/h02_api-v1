@@ -19,8 +19,8 @@ export const postsRepository = {
             content: post.content,
             shortDescription: post.shortDescription,
             blogId: post.blogId,
-            // blogName: blogsRepository.findById(post.blogId)!.name,
-            blogName: post.blogName
+            blogName: blogsRepository.findById(post.blogId)!.name,
+            // blogName: post.blogName
         }
     },
     updatePost(post: any, id: string) {
