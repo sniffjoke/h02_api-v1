@@ -6,7 +6,7 @@ export const blogsRepository = {
         return db.blogs.map(p => p)
     },
     getOne(id: string) {
-        return db.blogs.map(p => p.id === id)
+        return db.blogs.find(p => p.id === id)
     },
     findById(id: string) {
         return db.blogs.find(p => p.id === id)
