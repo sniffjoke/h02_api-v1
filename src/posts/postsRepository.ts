@@ -21,23 +21,23 @@ export const blogsRepository = {
     },
     updateBlog(blog: any, id: string) {
 
-            // const updatedBlog = {
-            //     id,
-            //     name: blog.name,
-            //     description: blog.description,
-            //     websiteUrl: blog.websiteUrl
-            // }
-            return db.blogs = db.blogs.map(p => p.id === id
-                ?
-                {
-                    ...p,
-                    id,
-                    name: blog.name,
-                    description: blog.description,
-                    websiteUrl: blog.websiteUrl
-                }
-                :
-                p)
+        // const updatedBlog = {
+        //     id,
+        //     name: blog.name,
+        //     description: blog.description,
+        //     websiteUrl: blog.websiteUrl
+        // }
+        return db.blogs = db.blogs.map(p => p.id === id
+            ?
+            {
+                ...p,
+                id,
+                name: blog.name,
+                description: blog.description,
+                websiteUrl: blog.websiteUrl
+            }
+            :
+            p)
     },
     deleteBlog(id: string) {
         return db.blogs = db.blogs.filter(blog => blog.id !== id)

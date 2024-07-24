@@ -10,7 +10,7 @@ const settings_1 = require("./settings");
 const getController_1 = require("./blogs/controllers/getController");
 const authMiddleware_1 = require("../middlewares/authMiddleware");
 // import videoRoutes from "./routes/videoRoutes";
-// import testingRoutes from "./routes/testingRoutes";
+// import testingRoutes.ts from "./routes/testingRoutes.ts";
 exports.app = (0, express_1.default)();
 exports.app.use(express_1.default.json());
 exports.app.use((0, cors_1.default)());
@@ -20,4 +20,4 @@ exports.app.get('/', (req, res) => {
 });
 exports.app.get(settings_1.SETTINGS.PATH.BLOGS, authMiddleware_1.authMiddleware, getController_1.getController);
 // app.use(SETTINGS.PATH.VIDEOS, videoRoutes)
-// app.use(SETTINGS.PATH.TESTING, testingRoutes)
+// app.use(SETTINGS.PATH.TESTING, testingRoutes.ts)

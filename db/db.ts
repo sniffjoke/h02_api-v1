@@ -31,3 +31,8 @@ export const db: DBType = {
     ],
     posts: []
 }
+
+export const resetDB = () => {
+    db.blogs = []
+    db.posts = []
+}

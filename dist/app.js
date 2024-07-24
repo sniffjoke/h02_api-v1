@@ -7,7 +7,7 @@ exports.app = void 0;
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 // import videoRoutes from "./routes/videoRoutes";
-// import testingRoutes from "./routes/testingRoutes";
+// import testingRoutes.ts from "./routes/testingRoutes.ts";
 exports.app = (0, express_1.default)();
 exports.app.use(express_1.default.json());
 exports.app.use((0, cors_1.default)());
@@ -17,4 +17,4 @@ exports.app.get('/', (req, res) => {
 });
 // app.get(SETTINGS.PATH.VIDEOS, getVideoController)
 // app.use(SETTINGS.PATH.VIDEOS, videoRoutes)
-// app.use(SETTINGS.PATH.TESTING, testingRoutes)
+// app.use(SETTINGS.PATH.TESTING, testingRoutes.ts)

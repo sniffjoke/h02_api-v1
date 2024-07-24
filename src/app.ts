@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import {SETTINGS} from "./settings";
 import blogsRoutes from "./routes/blogsRoutes";
+import testingRoutes from "./routes/testingRoutes";
 
 export const app = express()
 app.use(express.json())
@@ -15,5 +16,5 @@ app.get('/', (req, res) => {
 // app.get(SETTINGS.PATH.BLOGS, authMiddleware, getController)
 // app.post(SETTINGS.PATH.BLOGS, createController)
 // app.use(SETTINGS.PATH.VIDEOS, videoRoutes)
-// app.use(SETTINGS.PATH.TESTING, testingRoutes)
+app.use(SETTINGS.PATH.TESTING, testingRoutes)
 app.use(SETTINGS.PATH.BLOGS, blogsRoutes)
