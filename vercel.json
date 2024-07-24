@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "h01_api-v2",
+  "name": "h02_api-v1",
   "builds": [
     { "src": "src/index.ts", "use": "@vercel/node" }
   ],
