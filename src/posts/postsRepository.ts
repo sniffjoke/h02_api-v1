@@ -21,7 +21,8 @@ export const postsRepository = {
             blogId: post.blogId,
             blogName: blogsRepository.findById(post.blogId)!.name,
         }
-        return db.posts = [...db.posts, newPost];
+        db.posts = [...db.posts, newPost];
+        return newPost
     },
     updatePost(post: any, id: string) {
         const blog: any = blogsRepository.findById(post.blogId)
