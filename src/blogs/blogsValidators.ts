@@ -5,7 +5,7 @@ import {errorMiddleware} from "../../middlewares/errorMiddleware";
 export const nameBlogValidator = body('name')
     .isString().withMessage('Должно быть строковым значением')
     .trim()
-    .isLength({max: 15}).withMessage('Имя не должно превышать 15 знаков')
+    .isLength({min: 1, max: 15}).withMessage('Количество знаков 1-15')
 
 export const descriptionBlogValidator = body('description')
     .isString().withMessage('Должно быть строковым значением')
