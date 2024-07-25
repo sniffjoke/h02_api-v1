@@ -1,4 +1,5 @@
 import {body} from "express-validator";
+import {blogsRepository} from "../blogs/blogsRepository";
 
 export const idPostValidator = body('id')
     .isString().withMessage('Должно быть строковым значением')
@@ -23,6 +24,11 @@ export const shortDescriptionPostValidator = body('shortDescription')
 export const blogIdValidator = body('blogId')
     .isString().withMessage('Должно быть строковым значением')
     .trim()
+    .custom(blogId => {
+        const blog = blogsRepository.findById(blogId)
+        // console.log(blog)
+        return !!blog
+    }).withMessage('Блог не найден!')
     .isLength({min: 1})
 
 export const blogValidators = {
