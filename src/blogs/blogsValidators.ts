@@ -1,5 +1,4 @@
 import {body} from "express-validator";
-import {errorMiddleware} from "../../middlewares/errorMiddleware";
 
 
 export const nameBlogValidator = body('name')
@@ -21,6 +20,5 @@ export const websiteUrlValidator = body('websiteUrl')
 export const blogValidators = {
     nameBlogValidator,
     descriptionBlogValidator,
-    websiteUrlValidator,
-    errorMiddleware
+    websiteUrlValidator
 }

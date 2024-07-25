@@ -11,7 +11,27 @@ import {errorMiddleware} from "../../middlewares/errorMiddleware";
 const router = express.Router();
 
 
-router.route('/').get(getController).post(authMiddleware, nameBlogValidator, descriptionBlogValidator, websiteUrlValidator, errorMiddleware, createController)
-router.route('/:id').delete(authMiddleware, deleteController).put(authMiddleware, nameBlogValidator, descriptionBlogValidator, websiteUrlValidator, errorMiddleware, putController).get(getOneController)
+router.route('/')
+    .get(getController)
+    .post(
+        authMiddleware,
+        nameBlogValidator,
+        descriptionBlogValidator,
+        websiteUrlValidator,
+        errorMiddleware,
+        createController
+    )
+
+router.route('/:id')
+    .delete(authMiddleware, deleteController)
+    .put(
+        authMiddleware,
+        nameBlogValidator,
+        descriptionBlogValidator,
+        websiteUrlValidator,
+        errorMiddleware,
+        putController
+    )
+    .get(getOneController)
 
 export default router
