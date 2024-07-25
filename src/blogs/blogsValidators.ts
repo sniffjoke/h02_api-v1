@@ -10,13 +10,13 @@ export const nameBlogValidator = body('name')
 export const descriptionBlogValidator = body('description')
     .isString().withMessage('Должно быть строковым значением')
     .trim()
-    .isLength({max: 500}).withMessage('Количество знаков: 1-500')
+    .isLength({min: 1, max: 500}).withMessage('Количество знаков: 1-500')
 
 export const websiteUrlValidator = body('websiteUrl')
     .isString().withMessage('Должно быть строковым значением')
     .trim()
     .isURL().withMessage('Введите валидный URL')
-    .isLength({max: 100}).withMessage('Количество знаков 1-100')
+    .isLength({min: 1, max: 100}).withMessage('Количество знаков 1-100')
 
 export const blogValidators = {
     nameBlogValidator,
