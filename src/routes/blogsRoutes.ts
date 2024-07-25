@@ -12,6 +12,6 @@ const router = express.Router();
 
 
 router.route('/').get(getController).post(authMiddleware, nameBlogValidator, descriptionBlogValidator, websiteUrlValidator, errorMiddleware, createController)
-router.route('/:id').delete(authMiddleware, deleteController).put(authMiddleware, putController).get(getOneController)
+router.route('/:id').delete(authMiddleware, deleteController).put(authMiddleware, nameBlogValidator, descriptionBlogValidator, websiteUrlValidator, putController).get(getOneController)
 
 export default router
