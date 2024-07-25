@@ -13,19 +13,18 @@ export const postsRepository = {
         return db.posts.find(p => p.id === id)
     },
     createPost(post: any) {
-        return {
+        const newPost = {
             id: (new Date().getTime().toString(36)),
             title: post.title,
             content: post.content,
             shortDescription: post.shortDescription,
             blogId: post.blogId,
             blogName: blogsRepository.findById(post.blogId)!.name,
-            // blogName: post.blogName
         }
+        return db.posts = [...db.posts, newPost];
     },
     updatePost(post: any, id: string) {
         const blog: any = blogsRepository.findById(post.blogId)
-        console.log(post)
         return db.posts = db.posts.map(p => p.id === id
             ?
             {
