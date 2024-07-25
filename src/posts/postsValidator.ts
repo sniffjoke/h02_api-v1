@@ -15,7 +15,7 @@ export const contentPostValidator = body('content')
     .trim()
     .isLength({min: 1, max: 1000}).withMessage('Количество знаков: 1-1000')
 
-export const shortDescriptionPostValidator = body('description')
+export const shortDescriptionPostValidator = body('shortDescription')
     .isString().withMessage('Должно быть строковым значением')
     .trim()
     .isLength({min: 1, max: 100}).withMessage('Количество знаков: 1-100')
