@@ -7,7 +7,7 @@ export const postsRepository = {
         return db.posts.map(p => p)
     },
     getOne(id: string) {
-        return db.posts.map(p => p.id === id)
+        return db.posts.find(p => p.id === id)
     },
     findById(id: string) {
         return db.posts.find(p => p.id === id)
@@ -30,7 +30,6 @@ export const postsRepository = {
             ?
             {
                 ...p,
-                ...post,
                 id: post.id,
                 title: post.title,
                 content: post.content,

@@ -24,9 +24,9 @@ export const db: DBType = {
     blogs: [
         {
             id: '12345',
-            name: 'string',
-            description: 'string',
-            websiteUrl: 'string'
+            name: 'blog-name',
+            description: 'blog-description',
+            websiteUrl: 'blog-website',
         }
     ],
     posts: []
