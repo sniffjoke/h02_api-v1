@@ -27,6 +27,17 @@ router.route('/')
         errorMiddleware,
         createController
     )
-router.route('/:id').delete(authMiddleware, deleteController).put(authMiddleware, putController).get(getOneController)
+router.route('/:id')
+    .delete(authMiddleware, deleteController)
+    .put(
+        authMiddleware,
+        titlePostValidator,
+        contentPostValidator,
+        shortDescriptionPostValidator,
+        blogIdValidator,
+        errorMiddleware,
+        putController
+    )
+    .get(getOneController)
 
 export default router

@@ -26,7 +26,6 @@ export const blogIdValidator = body('blogId')
     .trim()
     .custom(blogId => {
         const blog = blogsRepository.findById(blogId)
-        // console.log(blog)
         return !!blog
     }).withMessage('Блог не найден!')
     .isLength({min: 1})
